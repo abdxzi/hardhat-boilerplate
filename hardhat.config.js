@@ -5,7 +5,12 @@ require("dotenv").config();
 module.exports = {
   solidity: "0.8.24",
   networks: {
-    hardhat: {},
+    eth_fork: {
+      chainId: 1337,
+      forking: {
+        url: "https://rpc.ankr.com/eth",
+      },
+    },
     sepolia: {
       url: process.env.TESTNET_RPC_URL_SEPOLIA,
       accounts: [process.env.TESTNET_PRIVATE_KEY],
